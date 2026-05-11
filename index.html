@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KainTa' - Solusi Tekstil Berkelanjutan</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/landing-style.css">
+    <style>
+        /* Hero Styling */
+        .hero-section {
+            position: relative;
+            background-image: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('assets/image1.jpg');
+            background-attachment: fixed;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            height: 80vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 0 0 50px 50px;
+            overflow: hidden;
+        }
+
+        .hero-card {
+            background: rgba(255, 255, 255, 0.274);
+            backdrop-filter: blur(10px);
+            padding: 40px;
+            border-radius: 20px;
+            text-align: center;
+            max-width: 600px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* Styling Search Bar di Header agar pas di tengah */
+        .nav-search-container {
+            flex: 0 1 400px; 
+            margin: 0 20px;
+        }
+
+        .search-form {
+            display: flex;
+            background: #f1f3f0;
+            padding: 5px 15px;
+            border-radius: 25px;
+            border: 1px solid transparent;
+            transition: 0.3s;
+        }
+
+        .search-form:focus-within {
+            background: #fff;
+            border-color: #97AB85;
+            box-shadow: 0 0 0 3px rgba(151, 171, 133, 0.1);
+        }
+
+        .search-form input {
+            width: 100%;
+            background: transparent;
+            border: none;
+            outline: none;
+            padding: 8px;
+            font-size: 14px;
+        }
+
+        .search-form button {
+            background: transparent;
+            border: none;
+            color: #97AB85;
+            cursor: pointer;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="top-bar">
+            <div class="container top-bar-flex">
+                <div class="user-toggle">
+                    <a href="#" class="active">INDIVIDU</a> | <a href="#">MITRA BISNIS</a>
+                </div>
+                <div class="top-info">
+                    <a href="track.html"><i class="fa-solid fa-truck-fast"></i> Lacak Penjemputan</a>
+                </div>
+            </div>
+        </div>
+
+        <nav class="navbar">
+            <div class="container nav-flex">
+                <div class="logo">KainTa<span>'</span>
+                </div>
+               
+                <div class="nav-search-container">
+                    <form id="searchForm" class="search-form">
+                        <input type="text" placeholder="Mau donasi, recycle, atau belanja?" id="searchInput">
+                        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+                    </form>
+                </div>
+
+                <div class="nav-right-side">
+                    <ul class="nav-links">
+                        <li class="dropdown">
+                            <a href="#">LAYANAN <i class="fa-solid fa-chevron-down"></i></a>
+                            <ul class="dropdown-content">
+                                <li><a href="shop.html">Commercial</a></li>
+                                <li><a href="donation-stories.html">Donation</a></li>
+                                <li><a href="recycle.html">Recycle</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="pickup-form.html">MITRA</a></li>
+                    </ul>
+                    <div class="nav-icons">
+                        <a href="shop.html" class="user-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                        <a href="login.html" class="user-link"><i class="fa-regular fa-user"></i></a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-section">
+            <div class="container">
+                <div class="hero-card">
+                    <h1>GIVE YOUR CLOTHES <br><span>A SECOND LIFE</span></h1>
+                    <p>Cara termudah untuk menjual, mendonasikan, atau mendaur ulang tekstil Anda secara bertanggung jawab.</p>
+                    <a href="login.html" class="btn-primary">Mulai Sekarang</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="dual-path-section container">
+            <div class="path-card">
+                <div class="path-icon"><i class="fa-solid fa-house-user"></i></div>
+                <h3>Cari Solusi</h3>
+                <p>Temukan pakaian second-hand berkualitas dan dukung produk lokal ramah lingkungan.</p>
+            </div>
+            <div class="path-card">
+                <div class="path-icon"><i class="fa-solid fa-handshake"></i></div>
+                <h3>Jadi Solusi</h3>
+                <p>Kelola pakaian tak terpakai. Jadwalkan penjemputan dan berikan kesempatan kedua bagi setiap serat kainmu.</p>
+            </div>
+        </section>
+
+        <section class="services-section container">
+            <h2 class="section-title">LAYANAN KAMI</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="img-zoom"><img src="assets/3dimageshop.jpg" alt="Commercial"></div>
+                    <div class="service-info">
+                        <h3>COMMERCIAL</h3>
+                        <p>Belanja koleksi second-hand pilihan.</p>
+                        <a href="shop.html" class="btn-text">SHOP NOW</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="img-zoom"><img src="assets/3d donation.png" alt="Donation"></div>
+                    <div class="service-info">
+                        <h3>INFO-DONATION</h3>
+                        <p>Saluran pakaian layak pakai Anda</p>
+                        <a href="donation-stories.html" class="btn-text">VIEW MORE</a>
+                    </div>
+                </div>
+                <div class="service-card">
+                    <div class="img-zoom"><img src="assets/3d recycle image.jpg" alt="Recycle"></div>
+                    <div class="service-info">
+                        <h3>INFO-RECYCLE</h3>
+                        <p>Daur ulang limbah tekstil industri.</p>
+                        <a href="recycle.html" class="btn-text">VIEW MORE</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+
+        <section class="bottom-cta container">
+            <div class="cta-banner-box">
+                <h2>Ingin menyalurkan stok tekstil berlebih?</h2>
+                <p>Daftar sebagai mitra distributor atau pabrik hari ini untuk solusi berkelanjutan.</p>
+                <a href="pickup-form.html" class="btn-white">Daftar Sebagai Mitra</a>
+            </div>
+        </section>
+    </main>
+
+    </main>
+
+    <footer>
+        <div class="container footer-grid">
+            <div class="footer-brand">
+                <h3>RE-HOME DEVELOPER</h3>
+                <p class="limited-text">Inisiatif pengelolaan tekstil berbasis di Makassar. Kami hadir untuk menghubungkan kepedulian Anda dengan ekosistem daur ulang yang bertanggung jawab</p>
+            </div>
+            <div class="footer-socials">
+                <a href="#"><i class="fa-brands fa-instagram"></i></a>
+                <a href="#"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="#"><i class="fa-brands fa-tiktok"></i></a>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+    document.getElementById('searchForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        const query = document.getElementById('searchInput').value.toLowerCase();
+
+        // Redirect berdasarkan kata kunci layanan
+        if (query.includes('donasi') || query.includes('sumbang') || query.includes('kasih') || query.includes('titip')) {
+            window.location.href = 'donation-stories.html';
+        } else if (query.includes('recycle') || query.includes('daur ulang') || query.includes('limbah') || query.includes('olah')) {
+            window.location.href = 'recycle-info.html';
+        } else if (query.includes('beli') || query.includes('belanja') || query.includes('toko') || query.includes('shop') || query.includes('thrift')) {
+            window.location.href = 'shop.html';
+        } else if (query !== "") {
+            // Default pencarian umum ke halaman shop
+            window.location.href = `shop.html?search=${encodeURIComponent(query)}`;
+        }
+    });
+    </script>
+
+</body>
+</html>
+
+

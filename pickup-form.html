@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KainTa' - Jadwalkan Penjemputan</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/form-style.css">
+    <link rel="stylesheet" href="css/Head-foot.css">
+</head>
+<body>
+
+ <header>
+    <div class="top-bar">
+        <div class="container top-bar-flex">
+            <div class="user-toggle">
+                <a href="#" class="active">INDIVIDU</a> | <a href="#">MITRA BISNIS</a>
+            </div>
+            <div class="top-info">
+                <a href="track.html"><i class="fa-solid fa-truck-fast"></i> Lacak Penjemputan</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-flex">
+           <a href="index.html" class="logo-link">
+             <div class="logo">KainTa<span>'</span></div>
+            </a>
+
+
+            <div class="nav-right-side">
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#">LAYANAN <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="shop.html">Commercial</a></li>
+                            <li><a href="donation-stories.html">Donation</a></li>
+                            <li><a href="recycle.html">Recycle</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="sell-item.html">MITRA</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="shop.html" class="user-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="login.html" class="user-link"><i class="fa-regular fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+    
+    <main class="form-container">
+        <form class="pickup-form">
+            
+            <section class="form-section">
+                <label class="section-label">MASUKKAN ALAMAT</label>
+                <div class="map-box">
+                    <div class="map-content">
+                        <i class="fa-solid fa-location-dot"></i>
+                        <span>Pilih lokasi di peta</span>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <label class="section-label">PILIH KATEGORI BARANG</label>
+                <div class="category-selection">
+                    <label class="category-item">
+                        <input type="radio" name="category" value="pakaian" checked>
+                        <div class="category-box">
+                            <i class="fa-solid fa-shirt"></i>
+                            <span>PAKAIAN</span>
+                        </div>
+                    </label>
+                    
+                    <label class="category-item">
+                        <input type="radio" name="category" value="tekstil">
+                        <div class="category-box">
+                            <i class="fa-solid fa-scroll"></i>
+                            <span>TEKSTIL</span>
+                        </div>
+                    </label>
+                    
+                    <label class="category-item">
+                        <input type="radio" name="category" value="lainnya">
+                        <div class="category-box">
+                            <i class="fa-solid fa-ellipsis"></i>
+                            <span>LAINNYA</span>
+                        </div>
+                    </label>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <label class="section-label">WAKTU PENJEMPUTAN</label>
+                <div class="datetime-grid">
+                    <div class="input-group">
+                        <span class="input-tag">TANGGAL</span>
+                        <input type="date" required>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-tag">JAM</span>
+                        <input type="time" required>
+                    </div>
+                </div>
+            </section>
+
+            <section class="form-section">
+                <label class="section-label">UPLOAD FOTO</label>
+                <div class="upload-area" onclick="document.getElementById('file-upload').click()">
+                    <i class="fa-solid fa-camera"></i>
+                    <p>MASUKKAN GAMBAR</p>
+                    <small>(Foto langsung atau ambil file)</small>
+                    <input type="file" id="file-upload" hidden accept="image/*">
+                </div>
+            </section>
+
+          <button type="button" class="submit-button" onclick="window.location.href='track.html'">
+            SUBMIT ORDER </button>
+
+  
+            
+
+        </form>
+    </main>
+
+</body>
+</html>
+
+

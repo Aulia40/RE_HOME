@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KainTa' - Toko Barang Bekas</title>
+    <link rel="stylesheet" href="css/shop-style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="stylesheet" href="css/Head-foot.css">
+</head>
+<body>
+
+ <header>
+    <div class="top-bar">
+        <div class="container top-bar-flex">
+            <div class="user-toggle">
+                <a href="#" class="active">INDIVIDU</a> | <a href="#">MITRA BISNIS</a>
+            </div>
+            <div class="top-info">
+                <a href="track.html"><i class="fa-solid fa-truck-fast"></i> Lacak Penjemputan</a>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <div class="container nav-flex">
+           <a href="index.html" class="logo-link">
+             <div class="logo">KainTa<span>'</span></div>
+            </a>
+
+
+            <div class="nav-right-side">
+                <ul class="nav-links">
+                    <li class="dropdown">
+                        <a href="#">LAYANAN <i class="fa-solid fa-chevron-down"></i></a>
+                        <ul class="dropdown-content">
+                            <li><a href="shop.html">Commercial</a></li>
+                            <li><a href="donation-stories.html">Donation</a></li>
+                            <li><a href="recycle.html">Recycle</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="pickup-form.html">MITRA</a></li>
+                </ul>
+                <div class="nav-icons">
+                    <a href="shop.html" class="user-link"><i class="fa-solid fa-cart-shopping"></i></a>
+                    <a href="login.html" class="user-link"><i class="fa-regular fa-user"></i></a>
+                </div>
+            </div>
+        </div>
+    </nav>
+</header>
+
+
+
+
+    <main class="shop-container">
+        <h2 class="section-title">Koleksi Terpilih</h2>
+
+        <div class="item-search-wrapper">
+            <div class="item-search-box">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="text" id="itemSearchInput" placeholder="Cari produk spesifik..." onkeyup="searchProduct()">
+            </div>
+        </div>
+
+        <section class="filter-bar">
+            <button class="filter-btn active" data-filter="all">Semua</button>
+            <button class="filter-btn" data-filter="pakaian">Pakaian</button>
+            <button class="filter-btn" data-filter="tas">Tas</button>
+            <button class="filter-btn" data-filter="sepatu">Sepatu</button>
+            <button class="filter-btn" data-filter="aksesoris">Aksesoris</button>
+        </section>
+
+        <section class="product-grid" id="product-list">
+
+            <div class="product-card" data-category="pakaian">
+                <span class="badge sale">Diskon 10%</span>
+                <div class="product-img"><img src="assets/shopjacket.jpg" alt="Jaket Denim"></div>
+                <h3>Jaket Denim Vintage</h3>
+                <p class="price">Rp 85.000</p>
+                <button class="buy-btn">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-category="pakaian">
+                <span class="badge eco">Eco-Choice</span>
+                <div class="product-img"><img src="assets/shopsweater.jpg" alt="Sweater"></div>
+                <h3>Sweater Rajut Sage</h3>
+                <p class="price">Rp 60.000</p>
+                <button class="buy-btn">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-category="tas">
+                <div class="product-img"><img src="assets/shopbag.jpg" alt="Tas"></div>
+                <h3>Tas Selempang Kanvas</h3>
+                <p class="price">Rp 45.000</p>
+                <button class="buy-btn">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-category="sepatu">
+                <div class="product-img"><img src="assets/shopshoes.jpg" alt="Sepatu"></div>
+                <h3>Sepatu Sneakers Putih</h3>
+                <p class="price">Rp 120.000</p>
+                <button class="buy-btn">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-category="sepatu">
+                <div class="product-img"><img src="assets/shopsepatu.jpg" alt="Sepatu"></div>
+                <h3>Sepatu Hitam Putih</h3>
+                <p class="price">Rp 75.000</p>
+                <button class="buy-btn">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-category="tas">
+                <div class="product-img"><img src="assets/shoptas.jpg" alt="Ransel"></div>
+                <h3>Ransel Outdoor Mini</h3>
+                <p class="price">Rp 95.000</p>
+                <button class="buy-btn">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-category="aksesoris">
+                <div class="product-img"><img src="assets/shopscrunch.jpg" alt="Scrunchie"></div>
+                <h3>Scrunchie Silk Set (3pcs)</h3>
+                <p class="price">Rp 15.000</p>
+                <button class="buy-btn">Tambah ke Keranjang</button>
+            </div>
+
+            <div class="product-card" data-category="aksesoris">
+                <div class="product-img"><img src="assets/shopbandana.jpg" alt="Bandana"></div>
+                <h3>Bandana Motif</h3>
+                <p class="price">Rp 20.000</p>
+                <button class="buy-btn">Tambah ke Keranjang</button>
+            </div>
+        </section>
+    </main>
+    
+    <div id="custom-alert" class="modal-overlay">
+        <div class="modal-box">
+            <i class="fa-solid fa-circle-check"></i>
+            <h3>Berhasil!</h3>
+            <p id="modal-message">Barang telah masuk ke keranjang.</p>
+            <button onclick="closeModal()">Oke Sip!</button>
+        </div>
+    </div>
+
+    <script>
+        // Logika Filter & Search (Digabung agar lebih efisien)
+        function searchProduct() {
+            let input = document.getElementById('itemSearchInput').value.toLowerCase();
+            let cards = document.querySelectorAll('.product-card');
+            cards.forEach(card => {
+                let title = card.querySelector('h3').innerText.toLowerCase();
+                card.style.display = title.includes(input) ? "" : "none";
+            });
+        }
+
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                button.classList.add('active');
+                const filterValue = button.getAttribute('data-filter');
+                document.querySelectorAll('.product-card').forEach(card => {
+                    card.style.display = (filterValue === 'all' || card.dataset.category === filterValue) ? 'block' : 'none';
+                });
+            });
+        });
+
+        // Logika Modal
+        function closeModal() { document.getElementById('custom-alert').style.display = 'none'; }
+        
+        document.querySelectorAll('.buy-btn').forEach(button => {
+            button.addEventListener('click', function() {
+                const title = this.closest('.product-card').querySelector('h3').innerText;
+                document.getElementById('modal-message').innerText = `${title} berhasil ditambah!`;
+                document.getElementById('custom-alert').style.display = 'flex';
+            });
+        });
+    </script>
+</body>
+</html>
+
+
