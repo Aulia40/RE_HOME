@@ -1,0 +1,339 @@
+/* --- Root Variables & Base --- */
+/* =========================================================
+   GOOGLE FONTS
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap');
+
+
+
+
+/* =========================================================
+   ROOT VARIABLES
+========================================================= */
+:root {
+    --sage-green: #97AB85;
+    --deep-sage: #7D8F6A;
+    --light-bg: #F5F7F4;
+    --white: #FFFFFF;
+    --text-main: #4A4A4A;
+    --text-muted: #888;
+    --border-color: #e0e6df;
+    --light-cream: #FDFBF7;
+}
+
+
+
+
+/* =========================================================
+   BASE
+========================================================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+
+body {
+    background-color: var(--light-bg);
+    color: var(--text-main);
+    overflow-x: hidden;
+    line-height: 1.6;
+}
+
+
+
+
+/* =========================================================
+   TYPOGRAPHY SYSTEM
+========================================================= */
+
+
+/* Semua Heading */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.sidebar-logo,
+.content-header h2 {
+    font-family: 'Playfair Display', serif;
+    letter-spacing: -0.5px;
+    color: var(--text-main);
+}
+
+
+/* Semua Text */
+p,
+span,
+a,
+label,
+input,
+textarea,
+button,
+li {
+    font-family: 'Inter', sans-serif;
+}
+
+
+
+
+/* =========================================================
+   LAYOUT
+========================================================= */
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar (Persis Kode Referensi) --- */
+.sidebar {
+    width: 250px;
+    background-color: var(--white);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    position: fixed;
+    height: 100%;
+    z-index: 100;
+}
+
+.sidebar-logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--sage-green);
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.sidebar-logo span { color: var(--deep-sage); }
+
+.side-links {
+    list-style: none;
+    flex: 1;
+}
+
+.side-links li { margin-bottom: 10px; }
+
+.side-links a {
+    text-decoration: none;
+    color: #888;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.side-links li.active a, .side-links a:hover {
+    background-color: #F1F6EF;
+    color: var(--sage-green);
+}
+
+.side-links i { margin-right: 12px; width: 20px; }
+
+.sidebar-footer a {
+    text-decoration: none;
+    color: #e74c3c;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+/* --- Recycle Container Layout --- */
+.recycle-container {
+    margin-left: 250px;
+    flex: 1;
+    padding: 40px 60px;
+}
+
+
+/* =========================================================
+   HEADER
+========================================================= */
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+
+.content-header h2 {
+    font-size: 30px;
+    font-weight: 700;
+    color: var(--text-main);
+    position: relative;
+}
+
+
+/* Garis bawah heading */
+.content-header h2::after {
+    content: '';
+    display: block;
+    width: 260px;
+    height: 3px;
+    background: var(--sage-green);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+
+.content-header p {
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+
+
+
+/* --- Recycle Grid (No Overlap) --- */
+.recycle-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 60px;
+}
+
+.recycle-card {
+    background: var(--white);
+    padding: 30px;
+    border-radius: 15px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+    display: flex; /* Sejajar menyamping */
+    gap: 20px;
+    transition: 0.3s ease;
+}
+
+.recycle-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--sage-green);
+}
+
+.recycle-icon {
+    font-size: 28px;
+    color: var(--sage-green);
+    background: #F1F6EF;
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    flex-shrink: 0;
+}
+
+.recycle-info h3 {
+    font-size: 20px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    color: var(--text-main);
+}
+
+.recycle-info p {
+    font-size: 14px;
+    color: #777;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+.btn-recycle {
+    text-decoration: none;
+    color: var(--sage-green);
+    font-weight: 700;
+    font-size: 14px;
+    border: 1.5px solid var(--sage-green);
+    padding: 8px 20px;
+    border-radius: 8px;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-recycle:hover {
+    background: var(--sage-green);
+    color: var(--white);
+}
+
+/* --- Bagian Steps (Horizontal Layout) --- */
+.recycle-steps {
+    margin-top: 60px;
+    padding: 40px;
+    background: var(--white);
+    border-radius: 20px;
+    border: 1px solid var(--border-color);
+}
+
+.section-title {
+    font-family: 'Playfair Display', serif; /* Mengikuti tema KainTa' */
+    font-size: 28px;
+    font-weight: 800; /* Pertebal font sesuai keinginanmu */
+    text-align: center;
+    margin-bottom: 50px;
+    color: var(--text-main);
+}
+
+/* KUNCI: Membuat baris ke samping */
+.steps-wrapper {
+    display: flex; 
+    justify-content: space-between; /* Memberi jarak merata antar langkah */
+    align-items: flex-start;
+    gap: 30px; /* Jarak antar kolom */
+}
+
+.step {
+    flex: 1; /* Membuat setiap langkah memiliki lebar yang sama */
+    text-align: center;
+    position: relative;
+}
+
+.step-num {
+    font-size: 60px; /* Ukuran angka besar seperti di foto */
+    font-weight: 900;
+    color: #F1F6EF; /* Warna soft agar teks h4 tetap terbaca */
+    display: block;
+    line-height: 1;
+    margin-bottom: -25px; /* Menumpuk sedikit dengan teks di bawahnya */
+    position: relative;
+    z-index: 1;
+}
+
+.step h4 {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--sage-green);
+    position: relative;
+    z-index: 2; /* Supaya teks berada di depan angka besar */
+    margin-bottom: 10px;
+}
+
+.step p {
+    font-size: 14px;
+    color: var(--text-muted);
+    line-height: 1.5;
+    padding: 0 10px;
+}
+
+
+
+/* --- Responsive Mobile --- */
+@media (max-width: 768px) {
+    .sidebar { width: 70px; padding: 20px 10px; }
+    .sidebar-logo, .side-links span { display: none; }
+    .recycle-container { margin-left: 70px; padding: 30px 20px; }
+    .recycle-card { flex-direction: column; }
+}
+
+

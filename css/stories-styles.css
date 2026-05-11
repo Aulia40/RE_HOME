@@ -1,0 +1,181 @@
+:root {
+    --sage-green: #97AB85;
+    --deep-sage: #7D8F6A;
+    --white: #FFFFFF;
+    --text-color: #4A4A4A;
+    --bg-color: #FDFBF7;
+}
+
+/* --- Penyelarasan Font Global --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif; /* Font default untuk isi */
+}
+
+/* --- Judul Halaman (Serasi untuk Semua) --- */
+.content-header h2, 
+.page-header h2, 
+.section-title {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 800 !important; /* Pertebal sesuai permintaan */
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+/* --- Sidebar Logo --- */
+.sidebar-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--sage-green);
+}
+
+/* --- Sub-Judul (Card & Info) --- */
+.recycle-info h3, 
+.step h4, 
+.label-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; /* Tetap tebal tapi tanpa dekorasi serif */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Angka Steps (Daur Ulang) --- */
+.step-num {
+    font-family: 'Playfair Display', serif; /* Agar serasi dengan judul utama */
+    font-weight: 900;
+    font-size: 60px;
+    color: #F1F6EF; /* Transparan lembut seperti di foto */
+}
+
+
+/* --- Donation Stories Layout --- */
+.stories-container {
+    padding: 40px 0 !important; /* Atas bawah saja, samping diatur container */
+    max-width: 1200px; /* Samakan dengan max-width navbar agar sejajar lurus */
+    margin: 0 auto;
+}
+
+/* Stories Grid: Dibuat lebih lebar dan tetap di tengah */
+.stories-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); /* Tetap 2 kolom tapi ditarik lebih lebar */
+    gap: 50px; /* Jarak antar kartu sedikit diperlebar agar elegan */
+    width: 100%;
+    padding: 0 20px; /* Jarak aman agar tidak nempel layar saat di-resize */
+}
+
+/* Story Card: Mengikuti gaya kartu belanja tapi lebih luas */
+.story-card {
+    position: relative;
+    background: var(--white);
+    border-radius: 25px; /* Lebih bulat sedikit agar terlihat ramah (tema donasi) */
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    display: flex;
+    flex-direction: column; /* Konten disusun ke bawah */
+}
+
+.story-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.06);
+}
+
+/* Gambar Cerita: Dibuat lebih sinematik */
+.card-img {
+    width: 100%;
+    height: 280px; /* Tinggi yang pas untuk landscape */
+    overflow: hidden;
+}
+
+.card-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.8s ease;
+}
+
+.story-card:hover .card-img img {
+    transform: scale(1.03);
+}
+
+/* Info Konten: Lebih banyak nafas (padding) */
+.card-content {
+    padding: 30px;
+    background: var(--white);
+}
+
+.card-content h3 {
+    font-family: var(--font-heading); /* Playfair Display */
+    font-size: 22px; 
+    font-weight: 700;
+    color: var(--dark);
+    margin-bottom: 15px;
+}
+
+.card-content p {
+    font-family: var(--font-main);
+    font-size: 15px;
+    color: var(--text-muted);
+    line-height: 1.8;
+    margin-bottom: 25px;
+}
+
+/* Link Learn More */
+.learn-more {
+    font-size: 13px;
+    color: var(--sage-green);
+    text-decoration: none;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.learn-more:hover {
+    gap: 12px; /* Efek bergeser saat di-hover */
+}
+
+/* --- Responsif Mobile --- */
+@media (max-width: 900px) {
+    .stories-grid {
+        grid-template-columns: 1fr; /* Jadi 1 kolom di tablet/HP agar teks enak dibaca */
+        max-width: 600px; /* Biar kartu tidak terlalu lebar di HP */
+        margin: 0 auto;
+    }
+}
+
+
+
+/* Learn More Link (Memberikan Kesan Tombol Halus) */
+.learn-more { 
+    display: inline-block;
+    font-size: 13px; 
+    color: var(--sage-green); 
+    text-decoration: none; 
+    font-weight: 700; 
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: 0.3s;
+}
+
+.learn-more:hover { 
+    color: var(--deep-sage);
+    transform: translateX(5px); /* Efek panah bergeser */
+}
+
+/* Responsif Mobile */
+@media (max-width: 768px) {
+    .stories-grid { 
+        grid-template-columns: 1fr; 
+        gap: 30px; 
+    }
+    .page-header h2 { font-size: 28px; }
+    .card-img { height: 240px; }
+}
+

@@ -1,0 +1,374 @@
+/* --- Root Variables & Base --- */
+:root {
+    --sage-green: #97AB85;
+    --deep-sage: #7D8F6A;
+    --light-bg: #F5F7F4;
+    --white: #FFFFFF;
+    --text-main: #4A4A4A;
+    --border-color: #e0e6df;
+    --light-cream: #FDFBF7; /* Untuk Recommendation Box */
+}
+
+
+/* --- Penyelarasan Font Global --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif; /* Font default untuk isi */
+}
+
+/* --- Judul Halaman (Serasi untuk Semua) --- */
+.content-header h2, 
+.page-header h2, 
+.section-title {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 800 !important; /* Pertebal sesuai permintaan */
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+/* --- Sidebar Logo --- */
+.sidebar-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--sage-green);
+}
+
+/* --- Sub-Judul (Card & Info) --- */
+.recycle-info h3, 
+.step h4, 
+.label-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; /* Tetap tebal tapi tanpa dekorasi serif */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Angka Steps (Daur Ulang) --- */
+.step-num {
+    font-family: 'Playfair Display', serif; /* Agar serasi dengan judul utama */
+    font-weight: 900;
+    font-size: 60px;
+    color: #F1F6EF; /* Transparan lembut seperti di foto */
+}
+
+.dashboard-container {
+    display: flex;
+    min-height: 100vh;
+}
+
+/* --- Sidebar (Persis Kode Referensi) --- */
+.sidebar {
+    width: 250px;
+    background-color: var(--white);
+    border-right: 1px solid var(--border-color);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 20px;
+    position: fixed;
+    height: 100%;
+    z-index: 100;
+}
+
+.sidebar-logo {
+    font-size: 26px;
+    font-weight: bold;
+    color: var(--sage-green);
+    margin-bottom: 40px;
+    padding-left: 10px;
+}
+
+.side-links {
+    list-style: none;
+    flex: 1;
+}
+
+.side-links li {
+    margin-bottom: 10px;
+}
+
+.side-links a {
+    text-decoration: none;
+    color: #888;
+    display: flex;
+    align-items: center;
+    padding: 12px 15px;
+    border-radius: 8px;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+.side-links li.active a, .side-links a:hover {
+    background-color: #F1F6EF;
+    color: var(--sage-green);
+}
+
+.side-links i {
+    margin-right: 12px;
+    width: 20px;
+}
+
+.sidebar-footer a {
+    text-decoration: none;
+    color: #e74c3c;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    padding: 10px 15px;
+}
+
+/* --- Main Content Layout --- */
+.main-content {
+    margin-left: 250px; /* Sesuai lebar sidebar */
+    flex: 1;
+    padding: 40px 60px;
+}
+
+.content-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+
+.content-header h2 {
+    color: var(--text-main);
+    font-weight: 400;
+    font-size: 24px;
+}
+
+/* --- Form Grid & Section Boxes --- */
+.form-grid {
+    display: grid;
+    grid-template-columns: 1.5fr 1fr;
+    gap: 30px;
+}
+
+.section-box {
+    background: var(--white);
+    padding: 25px;
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    margin-bottom: 25px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.02);
+}
+
+.label-title {
+    display: block;
+    font-weight: bold;
+    font-size: 12px;
+    text-transform: uppercase;
+    color: #777;
+    margin-bottom: 15px;
+    letter-spacing: 0.5px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #DDD;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    background: #FAFAFA;
+    outline: none;
+    transition: 0.3s;
+}
+
+.input-field:focus {
+    border-color: var(--sage-green);
+    background: var(--white);
+}
+
+/* --- Photo Grid --- */
+.photo-upload-grid {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr;
+    gap: 10px;
+    height: 180px;
+}
+
+.upload-slot {
+    border: 2px dashed #CCC;
+    border-radius: 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: #AAA;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-slot:hover {
+    border-color: var(--sage-green);
+    background: #F9F9F9;
+}
+
+.upload-slot.main {
+    background: #FDFDFD;
+    color: var(--sage-green);
+    border-color: var(--sage-green);
+}
+
+/* --- Price & Recommendation --- */
+.price-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: #F1F6EF;
+    border-radius: 10px;
+    padding: 5px 15px;
+}
+
+.price-input-wrapper span {
+    font-weight: bold;
+    color: var(--deep-sage);
+    margin-right: 10px;
+}
+
+.price-input-wrapper input {
+    background: transparent;
+    border: none;
+    padding: 10px;
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--deep-sage);
+    width: 100%;
+    outline: none;
+}
+
+.price-recommendation {
+    margin-top: 20px;
+    background: var(--light-cream);
+    border: 1px solid #E9E1D0;
+    border-radius: 8px;
+    padding: 15px;
+}
+
+.rec-header {
+    color: #8B7E66;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+}
+
+.price-range {
+    font-size: 18px;
+    color: #333;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+/* --- Condition Options --- */
+.condition-options {
+    display: flex;
+    gap: 10px;
+}
+
+.radio-tag input { display: none; }
+
+.radio-tag span {
+    padding: 8px 18px;
+    border: 1px solid #DDD;
+    border-radius: 20px;
+    font-size: 13px;
+    cursor: pointer;
+    display: inline-block;
+    transition: 0.3s;
+    background: var(--white);
+}
+
+.radio-tag input:checked + span {
+    background: var(--sage-green);
+    color: white;
+    border-color: var(--sage-green);
+}
+
+/* --- Buttons --- */
+.publish-btn {
+    width: 100%;
+    padding: 16px;
+    background: var(--sage-green);
+    color: white;
+    border: none;
+    border-radius: 10px;
+    font-weight: bold;
+    font-size: 16px;
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(151, 171, 133, 0.3);
+    transition: 0.3s;
+}
+
+.publish-btn:hover {
+    background: var(--deep-sage);
+    transform: translateY(-2px);
+}
+
+/* --- Responsive Mobile --- */
+@media (max-width: 1024px) {
+    .form-grid { grid-template-columns: 1fr; }
+}
+
+@media (max-width: 768px) {
+    .sidebar { width: 70px; padding: 20px 10px; }
+    .sidebar-logo, .side-links span, .side-links a { font-size: 0; display: block; text-align: center; }
+    .side-links i { margin: 0; font-size: 18px; }
+    .main-content { margin-left: 70px; padding: 20px; }
+}
+
+
+/* Update pada bagian judul di atas form/foto */
+.content-header h2 {
+    font-family: 'Playfair Display', serif; /* Font heading KainTa' */
+    font-size: 28px;
+    font-weight: 700;
+    color: var(--dark);
+    letter-spacing: -0.5px;
+}
+
+.content-header p {
+    font-family: 'Inter', sans-serif;
+    color: var(--text-muted);
+    font-size: 15px;
+    margin-top: 5px;
+}
+
+/* Tambahkan aksen garis kecil di bawah judul (opsional) */
+.content-header h2::after {
+    content: '';
+    display: block;
+    width: 260px;
+    height: 3px;
+    background: var(--sage-green);
+    margin-top: 8px;
+    border-radius: 2px;
+}
+
+
+.category-tag {
+    background: #F1F6EF; /* Warna soft sage */
+    color: var(--deep-sage);
+    padding: 4px 12px;
+    border-radius: 20px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+    display: inline-block;
+}
+/* Styling untuk deskripsi di samping judul */
+.header-description {
+    font-family: 'Inter', sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: var(--text-muted); /* Gunakan warna abu-abu lembut agar tidak balapan dengan judul */
+    max-width: 300px; /* Batasi lebar agar teks rapi saat membungkus */
+    padding-left: 20px;
+    border-left: 1px solid var(--border-color); /* Beri garis pemisah vertikal tipis di kirinya */
+    margin-left: 20px;
+}

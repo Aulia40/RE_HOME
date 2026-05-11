@@ -1,0 +1,272 @@
+/* KainTa' - Official Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&family=Montserrat:wght@800&display=swap');
+
+:root {
+    --sage-green: #97AB85;
+    --deep-sage: #7a8d6a;
+    --white: #FFFFFF;
+    --dark: #2d2d2d;
+    --text-muted: #666;
+    --bg-soft: #f9fbf8;
+   
+    /* Font System */
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-logo: 'Montserrat', sans-serif;
+}
+
+/* --- Reset & Base --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: var(--font-main);
+    color: var(--dark);
+    line-height: 1.6;
+    background-color: var(--white);
+    -webkit-font-smoothing: antialiased;
+}
+
+/* --- Layout Containers (Kunci Sejajar Vertikal) --- */
+.container, 
+.shop-container, 
+.stories-container, 
+.info-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* --- Navbar & Top Bar --- */
+.navbar {
+    background: var(--white);
+    border-bottom: 1px solid #eee;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    width: 100%;
+}
+
+.nav-flex, .top-bar-flex {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav-right-side {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--dark);
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover { color: var(--sage-green); }
+
+.logo-link { text-decoration: none; }
+.logo {
+    font-family: var(--font-logo);
+    font-size: 26px;
+    font-weight: 800;
+    color: var(--sage-green);
+    letter-spacing: -1.5px;
+}
+.logo span { color: var(--dark); }
+
+/* --- RECYCLE PAGE (PRODUCER VERSION) --- */
+
+/* Container Utama agar sejajar dengan Navbar */
+.info-layout {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+/* --- Hero Section (Top Banner) --- */
+.recycle-hero-simple {
+    background: var(--bg-soft);
+    border-radius: 40px;
+    padding: 80px 40px;
+    text-align: center;
+    margin-bottom: 60px;
+    border: 1px solid #f0f0f0;
+}
+
+.recycle-hero-simple .badge {
+    background: var(--sage-green);
+    color: white;
+    padding: 6px 18px;
+    border-radius: 30px;
+    font-size: 11px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: inline-block;
+    margin-bottom: 20px;
+}
+
+
+/* --- Recycle Hero & Cards --- */
+.recycle-hero-simple {
+    background: var(--bg-soft);
+    border-radius: 40px;
+    padding: 80px 40px;
+    text-align: center;
+    margin: 40px 0 60px;
+    border: 1px solid #f0f0f0;
+}
+
+.recycle-hero-simple h3 {
+    font-family: var(--font-heading);
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom: 80px;
+}
+
+.trust-card {
+    background: var(--white);
+    padding: 40px 30px;
+    border-radius: 30px;
+    border: 1px solid #eee;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.trust-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--sage-green);
+}
+
+/* --- TIMELINE PROSES (MENYAMPING & BERSIH) --- */
+.process-wrapper {
+    text-align: center;
+    margin-bottom: 120px;
+}
+
+.process-wrapper h3 {
+    font-family: var(--font-heading);
+    margin-bottom: 60px;
+    font-size: 32px;
+}
+
+.timeline-visual {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.step {
+    flex: 0 0 120px;
+    z-index: 2;
+}
+
+.step-icon {
+    width: 60px;
+    height: 60px;
+    background: var(--white);
+    border: 2px solid var(--sage-green);
+    color: var(--sage-green);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    margin: 0 auto 15px;
+    box-shadow: 0 0 0 8px var(--white); /* Memberi gap agar garis tidak nempel */
+}
+
+.line {
+    flex: 1;
+    height: 1px; /* Garis lebih tipis agar elegan */
+    background: #ddd;
+    margin-top: -38px;
+    z-index: 1;
+}
+
+/* --- IMPACT SECTION (VERSI CERAH) --- */
+.impact-section {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 40px;
+    padding: 40px 0;
+    border-top: 1px solid #eee; /* Garis pemisah tipis saja */
+}
+
+.stat-card {
+    text-align: center;
+}
+
+.stat-card h5 {
+    font-family: var(--font-heading);
+    font-size: 48px;
+    color: var(--sage-green);
+    margin-bottom: 5px;
+}
+
+.stat-card p {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: var(--text-muted);
+    font-weight: 600;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .info-grid, .impact-section { grid-template-columns: 1fr; }
+    .timeline-visual { flex-direction: column; gap: 40px; }
+    .line { display: none; }
+}
+
+
+/* --- Responsive Styling --- */
+@media (max-width: 768px) {
+    .nav-links, .line { display: none; }
+    .info-grid, .impact-section, .timeline-visual {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .recycle-hero-simple h3 { font-size: 28px; }
+}
+
+
+/* --- Responsive Styling --- */
+@media (max-width: 768px) {
+    .nav-links, .line { display: none; }
+    .info-grid, .impact-section, .timeline-visual {
+        grid-template-columns: 1fr;
+        flex-direction: column;
+        gap: 30px;
+    }
+    .recycle-hero-simple h3 { font-size: 28px; }
+}
+
+

@@ -1,0 +1,220 @@
+:root {
+    --primary-color: #97AB85;
+    --primary-dark: #7D8F6A;
+    --bg-light: #F8F9F7;
+    --text-main: #444;
+    --text-muted: #888;
+    --border-color: #E0E0E0;
+    --white: #ffffff;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Inter', -apple-system, sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+/* Global Container */
+.container { max-width: 1100px; margin: 0 auto; padding: 0 20px; }
+
+/* Memastikan tulisan di bawahnya tetap rapi */
+.map-content span {
+    display: block;
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+
+
+/* Main Container */
+.form-container {
+    display: flex;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+.pickup-form {
+    background: var(--white);
+    width: 100%;
+    max-width: 480px;
+    padding: 2rem;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+}
+
+.form-section {
+    margin-bottom: 1.8rem;
+}
+
+.section-label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 700;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.5px;
+}
+
+/* Map Styling */
+.map-box {
+    width: 100%;
+    height: 160px;
+    background-color: #F1F4F0;
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s;
+}
+
+.map-content {
+    text-align: center;
+    color: var(--primary-color);
+}
+
+.map-content i {
+    font-size: 2.5rem;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+
+.map-content span {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+/* Category Selection */
+.category-selection {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 12px;
+}
+
+.category-item input {
+    display: none;
+}
+
+.category-box {
+    border: 1.5px solid var(--border-color);
+    padding: 1.2rem 0.5rem;
+    text-align: center;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    background: var(--white);
+}
+
+.category-box i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    margin-bottom: 0.6rem;
+    display: block;
+}
+
+.category-box span {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+/* Category Radio Logic */
+.category-item input:checked + .category-box {
+    border-color: var(--primary-color);
+    background-color: #F9FBF8;
+    box-shadow: 0 4px 12px rgba(151, 171, 133, 0.15);
+}
+
+/* Datetime Styling */
+.datetime-grid {
+    display: flex;
+    gap: 12px;
+}
+
+.input-group {
+    flex: 1;
+}
+
+.input-tag {
+    display: block;
+    font-size: 0.7rem;
+    font-weight: 800;
+    color: var(--text-muted);
+    background: #EEEEEE;
+    padding: 3px 8px;
+    width: fit-content;
+    border-radius: 4px;
+    margin-bottom: 6px;
+}
+
+input[type="date"], 
+input[type="time"] {
+    width: 100%;
+    padding: 0.8rem;
+    border: 1.5px solid var(--border-color);
+    border-radius: 8px;
+    font-family: inherit;
+    color: var(--text-main);
+}
+
+/* Upload Area */
+.upload-area {
+    border: 2px dashed var(--primary-color);
+    background: #FCFDFB;
+    border-radius: 12px;
+    padding: 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.upload-area:hover {
+    background: #F1F6EF;
+}
+
+.upload-area i {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 0.8rem;
+}
+
+.upload-area p {
+    font-weight: 700;
+    font-size: 0.9rem;
+}
+
+.upload-area small {
+    color: var(--text-muted);
+    font-size: 0.75rem;
+}
+
+/* Submit Button */
+.submit-button {
+    width: 100%;
+    padding: 1.1rem;
+    background-color: var(--primary-color);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    transition: background 0.3s, transform 0.1s;
+    box-shadow: 0 4px 15px rgba(151, 171, 133, 0.3);
+}
+
+.submit-button:hover {
+    background-color: var(--primary-dark);
+}
+
+.submit-button:active {
+    transform: scale(0.98);
+}
+
+

@@ -1,0 +1,425 @@
+/* KainTa' - Shop Page Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,600&family=Montserrat:wght@800&display=swap');
+
+:root {
+    --sage-green: #97AB85;
+    --deep-sage: #7a8d6a;
+    --white: #FFFFFF;
+    --dark: #2d2d2d;
+    --text-muted: #666;
+    --bg-soft: #f9fbf8;
+    
+    /* Font System */
+    --font-main: 'Inter', sans-serif;
+    --font-heading: 'Playfair Display', serif;
+    --font-logo: 'Montserrat', sans-serif;
+}
+
+
+/* --- Penyelarasan Font Global --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Segoe UI', sans-serif; /* Font default untuk isi */
+}
+
+/* --- Judul Halaman (Serasi untuk Semua) --- */
+.content-header h2, 
+.page-header h2, 
+.section-title {
+    font-family: 'Playfair Display', serif !important;
+    font-weight: 800 !important; /* Pertebal sesuai permintaan */
+    color: var(--text-main);
+    letter-spacing: -0.5px;
+}
+
+/* --- Sidebar Logo --- */
+.sidebar-logo {
+    font-family: 'Playfair Display', serif;
+    font-size: 26px;
+    font-weight: 900;
+    color: var(--sage-green);
+}
+
+/* --- Sub-Judul (Card & Info) --- */
+.recycle-info h3, 
+.step h4, 
+.label-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 700; /* Tetap tebal tapi tanpa dekorasi serif */
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* --- Angka Steps (Daur Ulang) --- */
+.step-num {
+    font-family: 'Playfair Display', serif; /* Agar serasi dengan judul utama */
+    font-weight: 900;
+    font-size: 60px;
+    color: #F1F6EF; /* Transparan lembut seperti di foto */
+}
+
+
+/* Judul Halaman */
+.shop-container h2.section-title {
+    font-family: var(--font-heading);
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 40px;
+}
+
+.filter-bar { 
+    display: flex; 
+    gap: 12px; 
+    margin-bottom: 50px; 
+    justify-content: center; 
+    flex-wrap: wrap;
+}
+
+.filter-btn {
+    padding: 10px 28px;
+    border: 1px solid #eee;
+    background: var(--bg-soft);
+    color: var(--text-muted);
+    border-radius: 30px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-weight: 500;
+    font-size: 13px;
+    transition: 0.3s ease;
+}
+
+.filter-btn.active, .filter-btn:hover { 
+    background: var(--sage-green); 
+    color: var(--white); 
+    border-color: var(--sage-green);
+    box-shadow: 0 4px 12px rgba(151, 171, 133, 0.2);
+}
+
+/* --- Product Grid --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 40px;
+}
+
+.product-card {
+    background: var(--white);
+    padding: 0; /* Padding dihilangkan agar gambar bisa penuh ke atas */
+    border-radius: 20px;
+    overflow: hidden;
+    transition: 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    border: 1px solid #f0f0f0;
+}
+
+.product-card:hover { 
+    transform: translateY(-10px); 
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+}
+
+.product-img { 
+    width: 100%; 
+    height: 320px; /* Ditinggikan agar lebih estetik */
+    overflow: hidden; 
+}
+
+.product-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: 0.6s ease;
+}
+
+.product-card:hover img {
+    transform: scale(1.05);
+}
+
+.product-info {
+    padding: 20px;
+    text-align: center;
+}
+
+.product-card h3 { 
+    font-family: var(--font-main);
+    font-size: 16px; 
+    font-weight: 600;
+    margin-bottom: 8px; 
+    color: var(--dark);
+}
+
+.product-card .price { 
+    font-family: var(--font-main);
+    font-weight: 700; 
+    font-size: 15px;
+    color: var(--deep-sage); 
+    margin-bottom: 18px; 
+}
+
+.buy-btn {
+    width: 100%;
+    padding: 12px;
+    background: var(--sage-green);
+    color: var(--white);
+    border: none;
+    border-radius: 12px;
+    cursor: pointer;
+    font-family: var(--font-main);
+    font-weight: 600;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.buy-btn:hover { 
+    background: var(--dark); 
+}
+
+/* --- Modal Kustom --- */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    display: none;
+    justify-content: center;
+    align-items: center;
+    z-index: 2000;
+    backdrop-filter: blur(8px);
+}
+
+.modal-box {
+    background: var(--white);
+    padding: 40px;
+    border-radius: 30px;
+    text-align: center;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.15);
+    animation: popIn 0.5s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.modal-box i {
+    font-size: 50px;
+    color: var(--sage-green);
+    margin-bottom: 20px;
+}
+
+.modal-box h3 {
+    font-family: var(--font-heading);
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.modal-box p {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-bottom: 25px;
+}
+
+.modal-box button {
+    background: var(--sage-green);
+    color: var(--white);
+    border: none;
+    padding: 14px 40px;
+    border-radius: 30px;
+    font-weight: 600;
+    cursor: pointer;
+    width: 100%;
+    transition: 0.3s;
+}
+
+@keyframes popIn {
+    from { transform: translateY(20px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .navbar { padding: 15px 5%; }
+    .nav-links { display: none; }
+    .product-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 20px; }
+    .product-img { height: 260px; }
+}
+
+/* Search Bar Barang di Halaman Shop */
+.item-search-wrapper {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+}
+
+.item-search-box {
+    display: flex;
+    align-items: center;
+    background: var(--bg-soft);
+    border: 1px solid #eee;
+    padding: 10px 20px;
+    border-radius: 15px;
+    width: 100%;
+    max-width: 500px;
+    transition: 0.3s;
+}
+
+.item-search-box:focus-within {
+    border-color: var(--sage-green);
+    background: white;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+}
+
+.item-search-box input {
+    border: none;
+    outline: none;
+    background: transparent;
+    width: 100%;
+    padding-left: 15px;
+    font-size: 14px;
+}
+
+.item-search-box i {
+    color: var(--sage-green);
+}
+
+/* Badge Produk */
+.product-img { position: relative; }
+
+.badge {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    z-index: 10;
+    color: white;
+}
+
+.badge.sale { background: #e74c3c; }
+.badge.eco { background: var(--sage-green); }
+
+/* Efek Hover Tambahan pada Tombol */
+.buy-btn {
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.buy-btn::after {
+    content: '';
+    position: absolute;
+    bottom: 0; left: 0;
+    width: 100%; height: 0;
+    background: var(--dark);
+    z-index: -1;
+    transition: 0.3s;
+}
+
+.buy-btn:hover::after {
+    height: 100%;
+}
+
+/* Merapikan Jarak & Layout */
+.shop-container {
+    padding: 30px 8% !important; /* Mengurangi whitespace atas */
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+
+.section-title {
+    font-family: var(--font-heading);
+    margin-bottom: 20px; /* Merapatkan judul ke search bar */
+    text-align: center;
+}
+
+
+.item-search-wrapper {
+    margin-bottom: 25px; /* Jarak pas ke filter bar */
+    display: flex;
+    justify-content: center;
+}
+
+
+.item-search-box {
+    width: 100%;
+    max-width: 500px;
+    background: #f5f5f5; /* Warna lembut agar tidak kontras putih-putih */
+    padding: 10px 20px;
+    border-radius: 50px; /* Pill-shaped sesuai tombol filter */
+    border: 1px solid #eee;
+}
+
+
+.filter-bar {
+    margin-bottom: 35px; /* Jarak rapat ke produk */
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+
+/* Memperbaiki Product Card agar gambar penuh tanpa celah */
+.product-card {
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    background: #fff;
+    transition: 0.3s;
+}
+
+
+.product-img {
+    height: 280px;
+    position: relative;
+    overflow: hidden;
+}
+
+
+.product-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+.product-info {
+    padding: 15px;
+    text-align: center;
+}
+
+
+/* Badge agar tidak menumpuk whitespace */
+.badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 5;
+    font-size: 10px;
+    padding: 4px 10px;
+}
+
+
+/* --- Fix Badge Nyasar --- */
+.product-card {
+    position: relative; /* KUNCINYA: Supaya badge patuh pada kotaknya */
+    background: var(--white);
+    border-radius: 20px;
+    overflow: hidden;
+    border: 1px solid #f0f0f0;
+    transition: 0.3s;
+}
+
+.badge {
+    position: absolute; /* Sekarang dia akan menempel di pojok gambar produk */
+    top: 15px;
+    left: 15px;
+    z-index: 10;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+    color: white;
+}
+
